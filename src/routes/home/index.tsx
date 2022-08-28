@@ -40,7 +40,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 
 			return arr
 				.map(r => parseInt(r, 10))
-				.map((r, i) => isNaN(r) ? 1 : r);
+				.map((r, i) => isNaN(r) ? 100 : r);
 		})();
 
 		return [
