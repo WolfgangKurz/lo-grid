@@ -1,0 +1,93 @@
+.home {
+	img.heading-icon {
+		width: 80px;
+		height: 80px;
+		margin-right: 0.5em;
+	}
+
+	.home-title {
+		position: relative;
+		@include font-exo2;
+	}
+}
+
+.Link {
+	font-size: 90%;
+}
+
+.GridBack {
+	margin: 1.5em 1.5em 0.5em;
+
+	> div {
+		display: inline-block;
+		padding: 1em 1.5em;
+		background-color: $dark;
+	}
+}
+.Grid {
+	display: inline-grid;
+	margin: auto;
+	gap: 0.125em;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(3, auto);
+
+	> button {
+		padding: 0;
+		width: 2rem;
+		height: 2rem;
+	}
+	&.Values > button {
+		width: 3rem;
+		height: 3rem;
+		font-size: 11px;
+	}
+}
+.ValueColor {
+	$w: 14px;
+	$h: math.div($w, 38) * 34;
+
+	display: inline-block;
+	margin-top: 0.125em;
+	width: $w;
+	height: $h;
+	background-image: url(/skill-parallelogram.png);
+	background-repeat: no-repeat;
+	background-size: ($w * 8) ($h * 2);
+
+	margin-top: -2px;
+	margin-left: -2px;
+	background-position-x: -($w * 2);
+	z-index: 2;
+
+	&:global(.alt) {
+		background-position-y: -$h;
+	}
+
+	&[data-value="75"] {
+		background-position-x: -($w * 3);
+	}
+	&[data-value="50"] {
+		background-position-x: -($w * 4);
+	}
+	&[data-value="25"] {
+		background-position-x: -($w * 5);
+	}
+	&[data-value="10"] {
+		background-position-x: -($w * 6);
+	}
+	&[data-value="0"] {
+		visibility: hidden;
+	}
+}
+
+:global {
+	.input-group > .input-group-text:first-child {
+		min-width: 6em;
+
+		&,
+		& > * {
+			text-align: center;
+			justify-content: center;
+		}
+	}
+}
