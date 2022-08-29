@@ -221,8 +221,12 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 							ctx.font = "11px 'IBM Plex Sans KR','IBM Plex Sans'";
 							text("아군 대상", ow - 11, 44);
 						}
-
 						ctx.restore();
+
+						if (IsPassive.value) {
+							ctx.fillStyle = "rgba(33,37,41,0.625)"; // $dark
+							ctx.fillRect(-w, -h, w * 3, h * 3);
+						}
 
 						// grid
 						ctx.save();
@@ -295,7 +299,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col col-3">
+			<div class="col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
 				<div class="input-group mb-1">
 					<span class="input-group-text">
 						<input
@@ -313,7 +317,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col col-3">
+			<div class="col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
 				<div class="input-group mb-1">
 					<span class="input-group-text">
 						<input
@@ -331,7 +335,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col col-3">
+			<div class="col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
 				<div class="input-group mb-1">
 					<span class="input-group-text">
 						<input
@@ -349,7 +353,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col col-3">
+			<div class="col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
 				<div class="input-group mb-1">
 					<span class="input-group-text">AP</span>
 					<input
@@ -363,7 +367,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col col-3">
+			<div class="col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
 				<div class="input-group mb-1">
 					<span class="input-group-text">사거리</span>
 					<input
@@ -377,7 +381,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col col-3">
+			<div class="col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
 				<div class="input-group mb-1">
 					<span class="input-group-text">기준 위치</span>
 					<div class="form-control">
@@ -413,7 +417,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col col-3">
+			<div class="col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
 				<div class="input-group mb-1">
 					<span class="input-group-text">수치</span>
 					<div class="form-control">
