@@ -17,10 +17,10 @@ interface Props {
 const canvas: HTMLCanvasElement = document.createElement("canvas");
 
 const image = new Image();
-image.src = "/skill-parallelogram.png";
+image.src = "./skill-parallelogram.png";
 
 const circle = new Image();
-circle.src = "/range-circle.png";
+circle.src = "./range-circle.png";
 
 const HomeContent: FunctionalComponent<Props> = (props) => {
 	const [p1, p2, p3] = (() => {
@@ -78,7 +78,7 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 
 	return <div class={ `${style.home} home` }>
 		<h2>
-			<img class={ `${style["heading-icon"]} heading-icon` } src="/icon.png" />
+			<img class={ `${style["heading-icon"]} heading-icon` } src="./icon.png" />
 			<span class={ style["home-title"] }>
 				<span class="font-exo">LO-Grid</span>
 			</span>
