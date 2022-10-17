@@ -20,6 +20,7 @@ export default ({ mode }) => {
 	].join("\n")}\n`;
 
 	return defineConfig({
+		base: "./",
 		esbuild: {
 			jsxFactory: "h",
 			jsxFragment: "Fragment",
