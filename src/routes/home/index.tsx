@@ -72,9 +72,9 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		r.push(AP.value);
 		r.push(Range.value);
 		r.push(Offset.value);
-		return r.join(",") + "/" + Grid.value.map(v => v * 100).join(",");
+		return `?v=${r.join(",")}&g=${Grid.value.map(v => v * 100).join(",")}`;
 	})();
-	const fullURL = `${window.location.origin}/${url}`;
+	const fullURL = [window.location.origin, window.location.pathname, url].join("");
 
 	return <div class={ `${style.home} home` }>
 		<h2>
@@ -446,11 +446,21 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 	</div>;
 };
 
-const Home: FunctionalComponent<Props> = (props) => {
+const Home: FunctionalComponent = () => {
 	SetMeta(["description", "twitter:description"], null);
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle();
 
-	return <HomeContent p1={ props.p1 } p2={ props.p2 } />;
+	let p1: string | undefined;
+	let p2: string | undefined;
+
+	const qs = window.location.search.substring(1);
+	if (qs) {
+		const sp = new URLSearchParams(qs);
+		p1 = sp.get("v") || undefined;
+		p2 = sp.get("g") || undefined;
+	}
+
+	return <HomeContent p1={ p1 } p2={ p2 } />;
 };
 export default Home;
