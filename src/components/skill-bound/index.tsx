@@ -77,7 +77,7 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ alt, target, ap, ran
 			{ rangeBack }
 			{ rangeCells }
 			<div class="skill-range-circle font-exo2" title={ Range.toString() }>
-				{ Math.min(6, Range) }
+				{ /* Math.min(6, Range) */ Range }
 			</div>
 		</div>
 

@@ -86,6 +86,9 @@ const HomeContent: FunctionalComponent<Props> = (props) => {
 		<div class="mb-4 text-secondary">
 			<a href="https://lo.swaytwig.com/" target="_blank">https://lo.swaytwig.com/</a>
 		</div>
+		<div class="mb-4 text-secondary">
+			<a href="https://github.com/WolfgangKurz/lo-grid" target="_blank">Github</a>
+		</div>
 
 		<div class={ style.GridBack }>
 			<div ref={ BoundElem }>
